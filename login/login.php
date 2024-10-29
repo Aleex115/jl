@@ -36,7 +36,11 @@ while ($row = mysqli_fetch_array($resultado)) {
   if (password_verify($contraseña, $row['contraseña'])) {
     setcookie("email", "" . $email . "", time() + (86400 * 14), "/");
 
-    header("Location: ../index/indexClientes.html");
+    if ($tabla == "clientes") {
+      header("Location: ../index/indexClientes.html");
+    } else {
+      header("Location: ../index/index.html");
+    }
   } else {
     echo "Contraseña incorrecta";
   }
