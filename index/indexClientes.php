@@ -9,7 +9,8 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../estilos/normalize.css">
   <link rel="stylesheet" href="../estilos/index.css" />
-  <title>Document</title>
+  <link rel="shortcut icon" href="../icons/logo.svg" type="image/x-icon">
+  <title>Hector & Pablo Herbolario</title>
 </head>
 
 <body>
@@ -18,9 +19,9 @@
     <h1>Hector & Pablo Herbolario</h1>
     <nav>
       <ul>
-        <li><i class="fa-solid fa-house"></i>Inicio</li>
-        <li><i class="fa-solid fa-user"></i>Usuario</li>
-        <li><i class="fa-solid fa-cart-shopping"></i>Carrito</li>
+        <li><i class="fa-solid fa-house"></i><a href="">Inicio</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="">Usuario</a></li>
+        <li><i class="fa-solid fa-cart-shopping"></i><a href="../carrito/carrito.php">Carrito</a> <span class="carrito">0</span></li>
       </ul>
     </nav>
   </header>
@@ -30,7 +31,7 @@
     $base = "herbolario";
     $tabla = "productos";
     mysqli_select_db($c, $base);
-    $resultado  = mysqli_query($c, "SELECT precio,descp,nombre,categoria,url FROM $tabla");
+    $resultado  = mysqli_query($c, "SELECT id,precio,descp,nombre,categoria,url FROM $tabla");
     while ($registro = mysqli_fetch_array($resultado)) {
       echo
       "<div class='card'>
@@ -38,6 +39,7 @@
       <img src='$registro[url]' alt=''>
       <p>$registro[categoria]</p>
       <p>$registro[precio]€</p>
+      <button class='boton' id=$registro[id] >Añadir al carrito</button>
       <details>
       <summary>Descripción</summary>
       <p>$registro[descp]</p>
@@ -46,7 +48,7 @@
     }
     ?>
   </main>
-
+  <script src="index.js"></script>
 </body>
 
 </html>
