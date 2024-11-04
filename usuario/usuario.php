@@ -27,7 +27,7 @@ if (!isset($_COOKIE["email"])) {
       <ul>
         <li><i class="fa-solid fa-house"></i><a href="../index/indexClientes.php">Inicio</a></li>
         <li><i class="fa-solid fa-user"></i><a href="">Usuario</a></li>
-        <li><i class="fa-solid fa-cart-shopping"></i><a href="">Carrito</a><span class="carrito">0</span> </li>
+        <li><i class="fa-solid fa-cart-shopping"></i><a href="../carrito/carrito.php">Carrito</a><span class="carrito">0</span> </li>
       </ul>
     </nav>
   </header>

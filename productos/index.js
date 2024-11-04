@@ -17,7 +17,7 @@ forms.forEach((el) => {
 
       e.target.submit();
     } else {
-      alert("No se ha insertado el registro");
+      alert("No se ha actualizado el registro");
     }
   });
 });
