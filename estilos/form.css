@@ -48,13 +48,15 @@ input {
   width: 100%;
 }
 
-input[type="submit"] {
-  margin: 20px 10px 10px;
+input[type="submit"],
+a {
   background-color: var(--verde-oscuro);
-  color: var(--gris);
+  color: #fff;
   border-radius: 12px;
   padding: 0.5rem 1rem;
   border: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 p {
@@ -68,7 +70,8 @@ input[type="text"]:focus {
   color: var(--verde-3);
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+a:hover {
   background-color: var(--verde-3);
 }
 
