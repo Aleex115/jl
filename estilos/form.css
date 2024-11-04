@@ -29,11 +29,11 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   width: 20vw;
-  gap: 20px;
+  gap: 30px;
 
 }
 
-h2 {
+h1 {
   text-align: center;
   color: var(--verde-oscuro);
   margin-bottom: 0px;
@@ -48,17 +48,20 @@ input {
   width: 100%;
 }
 
-input[type="submit"] {
-  margin: 20px 10px 10px;
+input[type="submit"],
+a {
   background-color: var(--verde-oscuro);
-  color: var(--gris);
+  color: #fff;
   border-radius: 12px;
   padding: 0.5rem 1rem;
   border: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 p {
   margin-bottom: 5px;
+  font-size: 1.05rem;
 }
 
 input[type="email"]:focus,
@@ -68,7 +71,8 @@ input[type="text"]:focus {
   color: var(--verde-3);
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+a:hover {
   background-color: var(--verde-3);
 }
 
@@ -76,6 +80,10 @@ input[type="submit"]:hover {
   display: flex;
   margin: 20px;
   align-items: center;
+}
+
+label {
+  font-size: 1.1rem;
 }
 
 input[type="radio"] {

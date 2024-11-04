@@ -12,7 +12,9 @@ getCookie = (name) => {
   const cookieArray = document.cookie.split("; ");
   for (let cookie of cookieArray) {
     const [key, value] = cookie.split("=");
-    if (key === name) {
+    if (name === "email" && key === name) {
+      return decodeURIComponent(value);
+    } else if (key === name) {
       return JSON.parse(value);
     }
   }
@@ -62,6 +64,7 @@ addEventListener("click", (e) => {
       });
 
       if (cond) {
+        generarPDF();
         fetch("./compra.php", {
           method: "POST",
         })
@@ -93,3 +96,60 @@ addEventListener("click", (e) => {
     }
   }
 });
+async function generarPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Datos de ejemplo
+  // URL de ejemplo de la imagen
+
+  // Título
+  doc.setFontSize(16);
+  doc.text("Detalles de la Compra", 105, 20, null, null, "center");
+
+  doc.setFontSize(12);
+  doc.text("Fecha: " + new Date().toLocaleDateString(), 10, 30);
+  doc.text("Email: " + getCookie("email"), 10, 40);
+
+  // Espacio después del título
+  let selecciones = document.querySelectorAll("form");
+  let posicionY = 50; // Posición inicial para los productos
+
+  for (let el of selecciones) {
+    if (el.seleccion.checked) {
+      let precio = el.querySelector(".precio").textContent;
+      let nombre = el.querySelector("h3").textContent;
+      let img = el.querySelector("img").src;
+
+      // Añadir el nombre y precio del producto
+      doc.text(`Producto: ${nombre}`, 10, posicionY);
+      posicionY += 10;
+      doc.text(`Costo: ${precio}€`, 10, posicionY);
+      posicionY += 10;
+
+      // Cargar y agregar la imagen
+      try {
+        const imgData = await cargarImagenBase64(img);
+        doc.addImage(imgData, "JPEG", 10, posicionY, 50, 50);
+        posicionY += 60; // Incrementar el espacio después de la imagen
+      } catch (error) {
+        console.error("Error al cargar la imagen:", error);
+        doc.text("Imagen no disponible", 10, posicionY);
+        posicionY += 10;
+      }
+    }
+  }
+  doc.save("detalle_compra.pdf");
+}
+
+// Función para cargar una imagen desde una URL y convertirla a Base64
+async function cargarImagenBase64(url) {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}

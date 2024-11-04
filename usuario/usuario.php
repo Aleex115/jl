@@ -2,6 +2,13 @@
 if (!isset($_COOKIE["email"])) {
   header("Location: ../login/login.html");
 }
+$c = mysqli_connect("localhost", "alex", "alex");
+$base = "herbolario";
+$tabla = "clientes";
+mysqli_select_db($c, $base);
+$resultado  = mysqli_query($c, "SELECT nombre FROM $tabla where email = '$_COOKIE[email]'");
+$nombre = mysqli_fetch_array($resultado);
+$nombre = $nombre["nombre"];
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +33,9 @@ if (!isset($_COOKIE["email"])) {
     <nav>
       <ul>
         <li><i class="fa-solid fa-house"></i><a href="../index/indexClientes.php">Inicio</a></li>
-        <li><i class="fa-solid fa-user"></i><a href="">Usuario</a></li>
-        <li><i class="fa-solid fa-cart-shopping"></i><a href="">Carrito</a><span class="carrito">0</span> </li>
+        <li><i class="fa-solid fa-user"></i><a href=""><?php echo $nombre ?></a></li>
+        <li><i class="fa-solid fa-cart-shopping"></i><a href="../carrito/carrito.php">Carrito</a><span class="carrito">0</span> </li>
+        <li><i class="fa-solid fa-circle-info"></i><a href="../informacion/informacion.php">Sobre nosotros</a></li>
       </ul>
     </nav>
   </header>

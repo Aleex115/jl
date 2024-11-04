@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../estilos/normalize.css" />
-    <link rel="stylesheet" href="../estilos/form.css" />
-    <link rel="shortcut icon" href="../icons/logo.svg" type="image/x-icon" />
 
-    <title>Login</title>
-  </head>
-  <body>
-    <form action="login.php" method="post" class="form">
-      <h2>Log in</h2>
-      <div>
-        <p>Introduce email</p>
-        <input
-          type="email"
-          name="email"
-          required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-          title="Introduce email"
-        />
-      </div>
-      <div>
-        <p>Introduce password</p>
-        <input type="password" name="contraseña" required />
-      </div>
-      <div class="radio">
-        <label for="usuario">Usuario</label>
-        <input
-          type="radio"
-          name="usuario"
-          id="usuario"
-          value="usuario"
-          required
-        />
-        <label for="Trabajador">Trabajador</label>
-        <input
-          type="radio"
-          name="usuario"
-          id="trabajador"
-          value="trabajador"
-          required
-        />
-      </div>
-      <input type="submit" />
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../estilos/normalize.css" />
+  <link rel="stylesheet" href="../estilos/form.css" />
+  <link rel="shortcut icon" href="../icons/logo.svg" type="image/x-icon" />
+
+  <title>Login</title>
+</head>
+
+<body>
+  <form action="login.php" method="post" class="form">
+    <h1>Log in</h1>
+    <div>
+      <p>Introduce email</p>
+      <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="Introduce email" />
+    </div>
+    <div>
+      <p>Introduce password</p>
+      <input type="password" name="contraseña" required />
+    </div>
+    <div class="radio">
+      <label for="usuario">Usuario</label>
+      <input type="radio" name="usuario" id="usuario" value="usuario" required />
+      <label for="trabajador">Trabajador</label>
+      <input type="radio" name="usuario" id="trabajador" value="trabajador" required />
+    </div>
+    <a href="../signin/signin.html">Registrarse</a>
+    <input type="submit" value="Log in" />
+  </form>
+</body>
+
 </html>
