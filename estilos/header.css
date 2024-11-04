@@ -1,0 +1,49 @@
+:root {
+  --verde-claro: #f0f0d8;
+  --verde-2: #b4debe;
+  --verde-3: #77cca4;
+  --gris: #666666;
+  --verde-lima: #b4df37;
+  --verde-oscuro: #06341f
+}
+
+header {
+  background-color: var(--verde-oscuro);
+  color: var(--verde-claro);
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  height: 20vh;
+  padding-bottom: 30px;
+}
+
+header img {
+  position: absolute;
+  height: 100%;
+  left: 0%
+}
+
+a {
+  text-decoration: none;
+  color: var(--verde-claro);
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  width: 60vw;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+i {
+  margin: 0px 10px;
+}
+
+li:hover {
+  color: var(--verde-2);
+}

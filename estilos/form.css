@@ -4,6 +4,7 @@
   --verde-3: #77cca4;
   --gris: #666666;
   --verde-lima: #b4df37;
+  --verde-oscuro: #06341f;
 }
 
 body {
@@ -20,29 +21,28 @@ body {
 }
 
 .form {
-  background-color: var(--gris);
-  padding: 0px 40px 20px;
-  border: medium solid var(--verde-lima);
+  background-color: #fff;
+  padding: 20px;
+  border: medium solid var(--verde-oscuro);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 20vw;
-
   gap: 20px;
 
 }
 
 h2 {
   text-align: center;
-  color: var(--verde-lima);
+  color: var(--verde-oscuro);
   margin-bottom: 0px;
 }
 
 input {
   border: none;
-  border-bottom: medium solid var(--verde-lima);
-  color: var(--verde-lima);
+  border-bottom: medium solid var(--verde-oscuro);
+  color: var(--verde-oscuro);
   background: none;
   outline: none;
   width: 100%;
@@ -50,7 +50,7 @@ input {
 
 input[type="submit"] {
   margin: 20px 10px 10px;
-  background-color: var(--verde-lima);
+  background-color: var(--verde-oscuro);
   color: var(--gris);
   border-radius: 12px;
   padding: 0.5rem 1rem;

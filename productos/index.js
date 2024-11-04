@@ -1,3 +1,12 @@
+let ulrs = document.querySelectorAll(".url");
+
+ulrs.forEach((el) => {
+  el.addEventListener("change", (e) => {
+    console.log(e.target.value);
+    let img = e.target.closest("td").nextElementSibling.querySelector("img");
+    img.src = e.target.value;
+  });
+});
 let forms = document.querySelectorAll(".actualizar");
 
 forms.forEach((el) => {
@@ -12,6 +21,12 @@ forms.forEach((el) => {
     }
   });
 });
+let imagen = document.querySelector(".imagen");
+imagen.addEventListener("change", (e) => {
+  let previsualizar = document.querySelector(".previsualizar");
+  previsualizar.src = e.target.value;
+});
+
 let insertar = document.querySelector(".insertar");
 
 insertar.addEventListener("submit", (e) => {
@@ -34,16 +49,5 @@ eliminar.addEventListener("submit", (e) => {
     e.target.submit();
   } else {
     alert("No se ha insertado el registro");
-  }
-});
-
-let sesion = document.querySelector(".sesion");
-
-sesion.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (confirm("¿Estas seguro?")) {
-    e.target.submit();
-  } else {
-    alert("No se ha cerrado sesión");
   }
 });

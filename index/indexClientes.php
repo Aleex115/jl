@@ -1,3 +1,9 @@
+<?php
+if (!isset($_COOKIE["email"])) {
+  header("Location: ../login/login.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
     src="https://kit.fontawesome.com/42f1fa0ef9.js"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../estilos/normalize.css">
-  <link rel="stylesheet" href="../estilos/index.css" />
+  <link rel="stylesheet" href="../estilos/indexClientes.css" />
   <link rel="shortcut icon" href="../icons/logo.svg" type="image/x-icon">
   <title>Hector & Pablo Herbolario</title>
 </head>
@@ -20,7 +26,7 @@
     <nav>
       <ul>
         <li><i class="fa-solid fa-house"></i><a href="">Inicio</a></li>
-        <li><i class="fa-solid fa-user"></i><a href="">Usuario</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="../usuario/usuario.php">Usuario</a></li>
         <li><i class="fa-solid fa-cart-shopping"></i><a href="../carrito/carrito.php">Carrito</a> <span class="carrito">0</span></li>
       </ul>
     </nav>
@@ -48,7 +54,7 @@
     }
     ?>
   </main>
-  <script src="index.js"></script>
+  <script src="indexClientes.js"></script>
 </body>
 
 </html>

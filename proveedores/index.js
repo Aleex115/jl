@@ -36,14 +36,3 @@ eliminar.addEventListener("submit", (e) => {
     alert("No se ha insertado el registro");
   }
 });
-
-let sesion = document.querySelector(".sesion");
-
-sesion.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (confirm("¿Estas seguro?")) {
-    e.target.submit();
-  } else {
-    alert("No se ha cerrado sesión");
-  }
-});

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../estilos/normalize.css" />
     <link rel="stylesheet" href="../estilos/form.css" />
+    <link rel="shortcut icon" href="../icons/logo.svg" type="image/x-icon" />
 
-    <title>signup</title>
+    <title>Login</title>
   </head>
   <body>
     <form action="login.php" method="post" class="form">
@@ -27,9 +28,21 @@
       </div>
       <div class="radio">
         <label for="usuario">Usuario</label>
-        <input type="radio" name="usuario" id="usuario" />
+        <input
+          type="radio"
+          name="usuario"
+          id="usuario"
+          value="usuario"
+          required
+        />
         <label for="Trabajador">Trabajador</label>
-        <input type="radio" name="usuario" id="trabajador" />
+        <input
+          type="radio"
+          name="usuario"
+          id="trabajador"
+          value="trabajador"
+          required
+        />
       </div>
       <input type="submit" />
     </form>
