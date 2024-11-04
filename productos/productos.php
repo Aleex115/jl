@@ -49,6 +49,7 @@ function Select($dni)
         <li><i class="fa-solid fa-user-tie"></i><a href="../index/index.php">Gestión empleados</a></li>
         <li><i class="fa-brands fa-pagelines"></i><a href="">Gestión de productos</a></li>
         <li><i class="fa-solid fa-boxes-packing"></i></i><a href="../proveedores/proveedores.php">Gestión proveedores</a> </li>
+
       </ul>
     </nav>
   </header>
