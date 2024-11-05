@@ -126,7 +126,27 @@ function Select($dni)
       <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081" alt="" class="previsualizar">
     </div>
   </div>
-  <script src="index.js"></script>
+
+  <form action="borrar.php" method="POST" class="form eliminar">
+
+    <h2>Selecciona un producto a eliminar</h2>
+    <div class="container">
+      <select name="producto" id="producto">
+        <?php
+        $resultado = mysqli_query($c, "Select id,nombre,url from productos");
+
+        while ($producto = mysqli_fetch_array($resultado))
+          echo "<option value='$producto[id]' id='$producto[url]'>$producto[nombre]</option>";
+        ?>
+      </select>
+      <input type="submit" value="Borrar" class="borrar">
+    </div>
+
+
+
+
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

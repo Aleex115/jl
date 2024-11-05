@@ -69,7 +69,7 @@ if (!isset($_COOKIE["empleado"])) {
     </table>
 
     <form action="insertar.php" method="POST" class="insertar form">
-      <h2>Insertar proveedor</h2>
+      <h2>Insertar empleado</h2>
       <label for="dni">Introduce el dni</label>
       <input type="text" name="dni" id="dni" required>
       <label for="nombre">Introduce el nombre</label>
@@ -100,6 +100,8 @@ if (!isset($_COOKIE["empleado"])) {
   <form action="cerrar.php" method="post" class="sesion">
     <input type="submit" value="Cerrar sesión" class="borrar">
   </form>
+
+
   <script src="./index.js"></script>
 </body>
 

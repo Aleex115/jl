@@ -77,3 +77,27 @@ td img {
   font-size: 1.25rem;
   color: var(--verde-oscuro);
 }
+
+.borrar {
+  background-color: rgb(160, 11, 11) !important;
+}
+
+input[type="submit"] {
+  background-color: var(--verde-oscuro);
+  color: var(--verde-claro);
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--verde-oscuro);
+  color: var(--verde-2);
+
+}
+
+.eliminar {
+  width: 60%;
+  margin: 40px auto 80px;
+}

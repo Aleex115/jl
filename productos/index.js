@@ -44,7 +44,9 @@ let eliminar = document.querySelector(".eliminar");
 
 eliminar.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (confirm("¿Estas seguro?")) {
+  if (
+    confirm("¿Estas seguro?, se borraran también las ventas de este producto")
+  ) {
     alert("Se ha eliminado el registro");
     e.target.submit();
   } else {
