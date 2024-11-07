@@ -46,6 +46,57 @@ button {
   text-align: center;
 }
 
+p,
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+table input {
+  margin: 0 !important;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: var(--verde-lima);
+  outline: none;
+}
+
+
+input[type="submit"],
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--verde-oscuro);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: var(--verde-lima);
+}
+
 button:hover {
   color: #b3bfb5;
   cursor: pointer;
@@ -62,7 +113,7 @@ td img {
 
 
 .insertar {
-  margin: 40px;
+  margin-top: 10px;
   width: 600px;
   display: flex;
   flex-wrap: wrap;
@@ -76,28 +127,41 @@ td img {
   align-items: start;
   font-size: 1.25rem;
   color: var(--verde-oscuro);
+  gap: 30px;
 }
 
 .borrar {
   background-color: rgb(160, 11, 11) !important;
 }
 
-input[type="submit"] {
-  background-color: var(--verde-oscuro);
-  color: var(--verde-claro);
-  border: none;
-  cursor: pointer;
-  border-radius: 1rem;
-  transition: color 0.2s ease;
-}
 
-input[type="submit"]:hover {
-  background-color: var(--verde-oscuro);
-  color: var(--verde-2);
-
-}
 
 .eliminar {
-  width: 60%;
+  width: 50%;
   margin: 40px auto 80px;
+  padding: 0.8rem !important;
+}
+
+select {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+
+}
+
+select:focus {
+  border-color: var(--verde-lima);
+  outline: none;
+}
+
+option {
+  background-color: #fff;
+  color: var(--verde-oscuro);
 }

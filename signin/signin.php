@@ -35,6 +35,7 @@ $sql = "INSERT INTO $tabla VALUES('$dni', '$nombre', '$email', '$hash', '$direcc
 if (mysqli_query($c, $sql)) {
   header("Location: ../login/login.html");
 } else {
+  echo "<h1>El usuario ya existe</h1>";
   echo "Error: " . $sql . "<br>" . mysqli_error($c);
 }
 

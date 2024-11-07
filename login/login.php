@@ -21,7 +21,6 @@ echo "</body>";
 
 
 if ($usuario == "trabajador") {
-  echo $usuario;
   $tabla = "empleados";
 } else {
   $tabla = "clientes";
@@ -31,6 +30,10 @@ $c = mysqli_connect("localhost", "alex", "alex");
 $base = "herbolario";
 mysqli_select_db($c, $base);
 $resultado = mysqli_query($c, "select email, contraseña from $tabla where email = '$email'");
+if (mysqli_num_rows($resultado) == 0) {
+  echo "<h1>Contraseña o email incorrectos </h1>";
+  echo "<a href='login.html'>Volver</a>";
+}
 while ($row = mysqli_fetch_array($resultado)) {
   if (password_verify($contraseña, $row['contraseña'])) {
 

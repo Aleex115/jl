@@ -88,30 +88,61 @@ h3 {
   margin: 60px 0 10px;
 }
 
-input {
-  outline: none;
-  border-bottom: thin solid var(--verde-oscuro);
-  padding: 0.5rem 1rem;
-  color: var(--verde-oscuro);
+form {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+
+
+p,
 label {
-  color: var(--verde-3);
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
 }
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: var(--verde-lima);
+  outline: none;
+}
+
 
 input[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
   background-color: var(--verde-oscuro);
-  color: var(--verde-claro);
   border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 1rem;
-  transition: color 0.2s ease;
+  transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-  background-color: var(--verde-oscuro);
-  color: var(--verde-2);
-
+  background-color: var(--verde-lima);
 }
 
 .card {
