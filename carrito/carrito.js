@@ -46,9 +46,11 @@ checkboxes.forEach((el) => {
 
 addEventListener("click", (e) => {
   if (e.target.matches(".eliminar")) {
-    let id = e.target.id;
-    delete compras[id];
-    setCookie("compras", compras, 7);
+    if (confirm("¿Estas seguro?")) {
+      let id = e.target.id;
+      delete compras[id];
+      setCookie("compras", compras, 7);
+    }
   }
   if (e.target.matches(".comprar")) {
     if (confirm("¿Estas seguro?")) {

@@ -83,6 +83,8 @@ $nombre = $nombre["nombre"];
       } else {
         echo "<h2>No hay productos en el carrito</h2>";
       }
+    } else {
+      echo "<h2>No hay productos en el carrito</h2>";
     }
 
     ?>
