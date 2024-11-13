@@ -37,6 +37,7 @@ $base = "herbolario";
 $tabla = "empleados";
 mysqli_select_db($c, $base);
 if (mysqli_query($c, "UPDATE $tabla set email='$email',nombre='$nombre',sueldo='$sueldo',contraseña='$hash' where dni = '$dni'")) {
+  setcookie("empleado", "" . $email . "", time() + (86400 * 14), "/");
   header("Location: ./index.php");
 } else {
   echo "<p>Error: " . $sql . "<br>" . mysqli_error($c) . "</p>";

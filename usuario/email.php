@@ -23,12 +23,10 @@ $cookie = $_COOKIE["email"];
 mysqli_select_db($c, $base);
 
 if (mysqli_query($c, "UPDATE $tabla set email='$email' where email = '$cookie'")) {
+  setcookie("email", "" . $email . "", time() + (86400 * 14), "/");
   header("Location:./usuario.php");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($c);
 }
 
 mysqli_close($c);
-setcookie("email", $email, time() + 60 * 60 * 24 * 7);
-echo "<h1 class='exito'>Email cambiado con exito</h1>";
-echo "<a href='usuario.php'>Volver</a>";

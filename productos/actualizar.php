@@ -13,11 +13,11 @@ echo "<head>
 <body>";
 if (empty($precio)  || empty($nombre) || empty($id) || empty($url) || empty($descp) || empty($categoria) || empty($proveedor)) {
   echo "<h1>Todos los campos son obligatorios</h1>";
-  echo "<a href='proveedores.php'>Volver</a>";
+  echo "<a href='./productos.php'>Volver</a>";
   exit();
 } else if ($precio < 0) {
   echo "<h1>Introduce un precio valido</h1>";
-  echo "<a href='proveedores.php'>Volver</a>";
+  echo "<a href='./productos.php'>Volver</a>";
 
   exit();
 }

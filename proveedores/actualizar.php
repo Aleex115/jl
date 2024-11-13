@@ -22,11 +22,6 @@ if (empty($email)  || empty($nombre) || empty($dni) || empty($telefono)) {
   echo "<a href='proveedores.php'>Volver</a>";
 
   exit();
-} else if (!preg_match("/[0-9]{8}[A-Z]{1}/i", $dni)) {
-  echo "<h1>Introduce un dni valido</h1>";
-  echo "<a href='proveedores.php'>Volver</a>";
-
-  exit();
 }
 echo "</body>";
 
