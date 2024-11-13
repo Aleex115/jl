@@ -16,7 +16,8 @@ if (!preg_match("/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/i", $email)) {
   exit();
 }
 echo "</body>";
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "clientes";
 $cookie = $_COOKIE["email"];

@@ -21,7 +21,8 @@ if (empty($precio)  || empty($nombre)  || empty($url) || empty($descp) || empty(
   exit();
 }
 echo "</body>";
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "productos";
 mysqli_select_db($c, $base);

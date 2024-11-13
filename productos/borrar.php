@@ -2,7 +2,8 @@
 <?php
 
 $id = $_POST['producto'];
-$c = mysqli_connect("localhost", "alex", "alex", "herbolario");
+include_once("../conexion/conexion.php");
+
 
 if (!$c) {
   die("Connection failed: " . mysqli_connect_error());

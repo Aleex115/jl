@@ -26,7 +26,7 @@ if ($usuario == "trabajador") {
   $tabla = "clientes";
 }
 
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
 $base = "herbolario";
 mysqli_select_db($c, $base);
 $resultado = mysqli_query($c, "select email, contraseña from $tabla where email = '$email'");

@@ -2,7 +2,7 @@
 <?php
 
 $dni = $_POST['empleados'];
-$c = mysqli_connect("localhost", "alex", "alex", "herbolario");
+include("../conexion/conexion.php");
 
 if (!$c) {
   die("Connection failed: " . mysqli_connect_error());

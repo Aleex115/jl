@@ -26,7 +26,8 @@ echo "</body>";
 
 
 
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "productos";
 mysqli_select_db($c, $base);

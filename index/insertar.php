@@ -33,7 +33,8 @@ if (empty($email)  || empty($nombre) || empty($dni)) {
 echo "</body>";
 $hash = password_hash($contraseña, PASSWORD_DEFAULT);
 
-$c = mysqli_connect("localhost", "alex", "alex");
+include("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "empleados";
 mysqli_select_db($c, $base);

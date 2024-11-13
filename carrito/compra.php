@@ -2,7 +2,8 @@
 
 $email = $_COOKIE["email"];
 
-$c = mysqli_connect("localhost", "alex", "alex");
+include("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "clientes";
 mysqli_select_db($c, $base);

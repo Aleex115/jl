@@ -29,8 +29,8 @@ if (empty($email)  || empty($nombre) || empty($dni) || empty($telefono)) {
 }
 echo "</body>";
 
+include_once("../conexion/conexion.php");
 
-$c = mysqli_connect("localhost", "alex", "alex");
 $base = "herbolario";
 $tabla = "proveedores";
 mysqli_select_db($c, $base);

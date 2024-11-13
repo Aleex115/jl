@@ -2,7 +2,8 @@
 if (!isset($_COOKIE["email"])) {
   header("Location: ../login/login.html");
 }
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "clientes";
 mysqli_select_db($c, $base);
@@ -63,7 +64,7 @@ $nombre = $nombre["nombre"];
   </div>
   <main>
     <?php
-    $c = mysqli_connect("localhost", "alex", "alex");
+
     $base = "herbolario";
     $tabla = "clientes";
     $email = $_COOKIE["email"];

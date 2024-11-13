@@ -4,7 +4,8 @@ if (!isset($_COOKIE["empleado"])) {
 }
 function Select($dni)
 {
-  $c = mysqli_connect("localhost", "alex", "alex");
+  include("../conexion/conexion.php");
+
   $base = "herbolario";
   $tabla = "proveedores";
   mysqli_select_db($c, $base);
@@ -71,7 +72,8 @@ function Select($dni)
 
     <tbody>
       <?php
-      $c = mysqli_connect("localhost", "alex", "alex");
+      include("../conexion/conexion.php");
+
       $base = "herbolario";
       $tabla = "productos";
       mysqli_select_db($c, $base);

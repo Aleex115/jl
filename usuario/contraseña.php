@@ -14,7 +14,8 @@ if ($contraseña != $contraseña2) {
   exit();
 }
 echo "</body>";
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "clientes";
 $cookie = $_COOKIE["email"];

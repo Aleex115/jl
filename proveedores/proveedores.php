@@ -45,7 +45,8 @@ if (!isset($_COOKIE["empleado"])) {
 
       <tbody>
         <?php
-        $c = mysqli_connect("localhost", "alex", "alex");
+        include_once("../conexion/conexion.php");
+
         $base = "herbolario";
         $tabla = "proveedores";
         mysqli_select_db($c, $base);

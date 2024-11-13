@@ -27,7 +27,8 @@ echo "</body>";
 
 $hash = password_hash($contraseña, PASSWORD_DEFAULT);
 
-$c = mysqli_connect("localhost", "alex", "alex");
+include_once("../conexion/conexion.php");
+
 $base = "herbolario";
 $tabla = "clientes";
 mysqli_select_db($c, $base);
