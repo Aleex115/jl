@@ -3,10 +3,9 @@
 
 $dni = $_POST['empleados'];
 include("../conexion/conexion.php");
+$base = "herbolario";
+mysqli_select_db($c, $base);
 
-if (!$c) {
-  die("Connection failed: " . mysqli_connect_error());
-}
 
 $sql = "DELETE FROM empleados WHERE dni = '$dni'";
 if (mysqli_query($c, $sql)) {

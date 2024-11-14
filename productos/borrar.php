@@ -5,9 +5,10 @@ $id = $_POST['producto'];
 include_once("../conexion/conexion.php");
 
 
-if (!$c) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+
+$base = "herbolario";
+mysqli_select_db($c, $base);
+
 
 $sql = "DELETE FROM productos WHERE id = '$id'";
 if (mysqli_query($c, $sql)) {

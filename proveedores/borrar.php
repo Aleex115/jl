@@ -5,9 +5,9 @@ $dni = $_POST['proveedor'];
 include_once("../conexion/conexion.php");
 
 
-if (!$c) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+
+$base = "herbolario";
+mysqli_select_db($c, $base);
 
 $sql = "DELETE FROM proveedores WHERE dni = '$dni'";
 if (mysqli_query($c, $sql)) {
